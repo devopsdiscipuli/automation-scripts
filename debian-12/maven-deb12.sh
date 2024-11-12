@@ -24,6 +24,7 @@ swapon --show
 sudo apt install openjdk-17-jdk -y
 wget https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz
 sudo tar xvf apache-maven-3.9.9-bin.tar.gz -C /opt
+rm apache-maven-3.9.9-bin.tar.gz
 sudo ln -s /opt/apache-maven-3.9.9 /opt/maven
 sudo touch /etc/profile.d/maven.sh
 echo 'export M2_HOME=/opt/maven' | sudo tee -a /etc/profile.d/maven.sh
