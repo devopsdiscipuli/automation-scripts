@@ -12,6 +12,15 @@
 # switch to "jenkins-user" 
 # su - jenkins-user
 
+# add 1Gb swapspace permanently 
+sudo fallocate -l 1G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+free -h
+swapon --show
+
 sudo apt install openjdk-17-jdk -y
 wget https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz
 sudo tar xvf apache-maven-3.9.9-bin.tar.gz -C /opt
